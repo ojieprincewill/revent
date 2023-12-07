@@ -1,0 +1,30 @@
+.link-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 40px 0 0;
+
+  .navlink {
+    font-size: 1.3rem;
+    font-weight: 550;
+    color: #fff;
+    padding: 8px;
+    margin: 0 20px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #a9a9a9;
+    }
+
+    &.active,
+    &:active {
+      color: #fce82f;
+    }
+  }
+}
+.logo-container {
+  display: flex;
+  justify-content: flex-start;
+  margin: 0 0 50px;
+}

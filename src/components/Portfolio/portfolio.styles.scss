@@ -1,0 +1,59 @@
+.portfolio {
+  margin: 50px 0;
+
+  .portfolio-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 60px 0;
+
+    .title {
+      font-size: 35px;
+      margin: 0;
+      padding: 0 0 3px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .underline {
+      margin: 0 0 0 20px;
+    }
+  }
+
+  .port-content {
+    margin: 30px 0 0 0;
+
+    .option-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 20px 0;
+
+      .port-option {
+        font-size: 20px;
+        margin: 0 10px;
+        background-color: transparent;
+        border: none;
+        border-radius: 10px;
+        padding: 6px 26px;
+        cursor: pointer;
+        transition: all 200ms ease-in-out;
+
+        &.active,
+        &:active {
+          transform: scale(1.1);
+          background-color: #fff;
+          color: #222;
+        }
+      }
+    }
+
+    .port-img-cont {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 30px 0 0 0;
+    }
+  }
+}
