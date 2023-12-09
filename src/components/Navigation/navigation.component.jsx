@@ -1,12 +1,21 @@
 import React, { useState } from "react";
+
 import "./navigation.styles.scss";
+
 import { Link, animateScroll as scroll } from "react-scroll";
+import { FiMenu, FiX } from "react-icons/fi";
+import MobileNavigation from "./mobile-navigation.component";
 
 const Navigation = () => {
   const [activeLink, setActiveLink] = useState(null);
+  const [navDisplay, setNavDisplay] = useState(false);
 
   const handleNavLinkClick = (link) => {
     setActiveLink(link);
+  };
+
+  const handleBurgerClick = () => {
+    setNavDisplay(!navDisplay);
   };
 
   const scrollToTop = () => {
@@ -26,15 +35,6 @@ const Navigation = () => {
           About Us
         </Link>
         <Link
-          to="portfolio"
-          smooth={true}
-          duration={700}
-          className={`navlink ${activeLink === "portfolio" ? "active" : ""}`}
-          onClick={() => handleNavLinkClick("portfolio")}
-        >
-          Portfolio
-        </Link>
-        <Link
           to="experience"
           smooth={true}
           duration={700}
@@ -42,6 +42,15 @@ const Navigation = () => {
           onClick={() => handleNavLinkClick("experience")}
         >
           Experience
+        </Link>
+        <Link
+          to="portfolio"
+          smooth={true}
+          duration={700}
+          className={`navlink ${activeLink === "portfolio" ? "active" : ""}`}
+          onClick={() => handleNavLinkClick("portfolio")}
+        >
+          Portfolio
         </Link>
         <Link
           to="contact"
@@ -53,6 +62,14 @@ const Navigation = () => {
           Contact
         </Link>
       </div>
+      <div className="burger-cont" onClick={handleBurgerClick}>
+        {navDisplay ? (
+          <FiX className="burger-icon" />
+        ) : (
+          <FiMenu className="burger-icon" />
+        )}
+      </div>
+      {navDisplay ? <MobileNavigation navOpen={navDisplay} /> : null}
       <div className="logo-container" onClick={scrollToTop}>
         <img
           src="https://revent-pi.vercel.app/assets/revent-logo.png"

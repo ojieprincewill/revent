@@ -7,22 +7,13 @@ const Header = () => {
     <div className="header">
       <div className="entry-text">
         <h1 className="title">
-          Innovative Solution
-          <br />
-          Taliored to your
-          <br />
-          Business need
+          Innovative Solution Taliored to your Business need
         </h1>
         <p className="text">
-          We can partner with your business to provide a symbiotic
-          <br />
-          relationship and synergy to help you or your business
-          <br />
-          achieve more business growth through strategic financial
-          <br />
-          advisory, investment business and human resource
-          <br />
-          planning and management.​
+          We can partner with your business to provide a symbiotic relationship
+          and synergy to help you or your business achieve more business growth
+          through strategic financial advisory, investment business and human
+          resource planning and management.​
         </p>
         <div className="button-cont">
           <button className="get-in-touch">Get In touch</button>

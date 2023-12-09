@@ -1,8 +1,40 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { motion, useAnimation } from "framer-motion";
 
 import "./resume.styles.scss";
 
 const Resume = () => {
+  //animation controls, element reference, visibility state management
+  const control = useAnimation();
+  const ref = useRef();
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    const handleResumeScroll = () => {
+      const resumeTop = ref.current.getBoundingClientRect().top;
+      const Animate = resumeTop < window.innerHeight / 2;
+
+      if (Animate && !isMounted) {
+        setIsMounted(true);
+        control.start("show");
+      } else if (!Animate && isMounted) {
+        setIsMounted(false);
+        control.start("hide");
+      }
+    };
+
+    window.addEventListener("scroll", handleResumeScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleResumeScroll);
+    };
+  }, [control, isMounted]);
+
+  const experienceVariants = {
+    hide: { opacity: 0, y: "-10%" },
+    show: { opacity: 1, y: 0 },
+  };
+
   return (
     <div id="experience" className="resume">
       <div className="resume-header">
@@ -13,7 +45,14 @@ const Resume = () => {
           alt="underline"
         />
       </div>
-      <div className="resume-content">
+      <motion.div
+        className="resume-content"
+        variants={experienceVariants}
+        initial="hide"
+        animate={control}
+        transition={{ duration: 1.5 }}
+        ref={ref}
+      >
         <div className="content1">
           <img
             src="https://revent-pi.vercel.app/assets/Line%206.svg"
@@ -50,7 +89,7 @@ const Resume = () => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

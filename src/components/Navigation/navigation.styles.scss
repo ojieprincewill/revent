@@ -23,8 +23,31 @@
     }
   }
 }
+
+.burger-cont {
+  display: none;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px 0;
+
+  .burger-icon {
+    font-size: 30px;
+    cursor: pointer;
+  }
+}
+
 .logo-container {
   display: flex;
   justify-content: flex-start;
   margin: 0 0 50px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .link-container {
+    display: none;
+  }
+
+  .burger-cont {
+    display: flex;
+  }
 }

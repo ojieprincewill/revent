@@ -106,3 +106,31 @@
     }
   }
 }
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .resume {
+    .resume-content {
+      width: 100%;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+
+      .content2 {
+        margin: 0 0 0 100px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .resume {
+    .resume-content {
+      width: 100%;
+      grid-template-columns: 1fr;
+      gap: 30px;
+
+      .content2 {
+        margin: unset;
+      }
+    }
+  }
+}
