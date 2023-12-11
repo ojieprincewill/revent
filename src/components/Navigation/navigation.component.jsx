@@ -69,7 +69,7 @@ const Navigation = () => {
           <FiMenu className="burger-icon" />
         )}
       </div>
-      {navDisplay ? <MobileNavigation navOpen={navDisplay} /> : null}
+      {navDisplay ? <MobileNavigation /> : null}
       <div className="logo-container" onClick={scrollToTop}>
         <img
           src="https://revent-pi.vercel.app/assets/revent-logo.png"
