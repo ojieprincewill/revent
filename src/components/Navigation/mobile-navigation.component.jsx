@@ -3,7 +3,7 @@ import { Link } from "react-scroll";
 
 import "./mobile-navigation.styles.scss";
 
-const MobileNavigation = () => {
+const MobileNavigation = ({ navOpen }) => {
   const [mobileActiveLink, setMobileActiveLink] = useState(null);
 
   const handleNavLinkClick = (link) => {
@@ -11,7 +11,7 @@ const MobileNavigation = () => {
   };
 
   return (
-    <div className="mobile-nav">
+    <div className={`mobile-nav ${navOpen ? "animate" : ""}`}>
       <Link
         to="about"
         smooth={true}
